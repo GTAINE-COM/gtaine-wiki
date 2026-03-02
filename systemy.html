@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <title>Системи | GTAINE Wiki</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0f0f0f;
-            color: white;
-            padding: 40px;
-        }
+<meta charset="UTF-8">
+<title>Системи | GTAINE Wiki</title>
 
-        h1 {
-            color: #2d6bff;
-        }
-
-        .section {
-            margin-top: 30px;
-            background: #1a1a1a;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        a {
-            color: #ffd000;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#0f0f0f;color:#fff;}
+nav{background:#111;padding:15px;text-align:center;}
+nav a{color:#ffd000;margin:0 15px;text-decoration:none;font-weight:bold;}
+nav a:hover{color:#2d6bff;}
+.container{max-width:1100px;margin:0 auto;padding:40px 20px 60px;}
+h1{color:#2d6bff;margin-top:0;}
+.block{
+    background:#1a1a1a;
+    padding:22px;
+    border-radius:12px;
+    margin-top:18px;
+    transition:0.25s;
+}
+.block:hover{background:#222;transform:translateY(-2px);}
+.block h2{margin:0 0 10px 0;}
+.small{opacity:0.85;font-size:14px;margin-top:8px;}
+</style>
 </head>
+
 <body>
 
-<h1>⚙ Системи сервера</h1>
+<nav>
+  <a href="index.html">Головна</a>
+  <a href="derzh.html">Держ.орг</a>
+  <a href="roboty.html">Роботи</a>
+  <a href="transport.html">Транспорт</a>
+  <a href="systemy.html">Системи</a>
+</nav>
 
-<div class="section">
+<div class="container">
+  <h1>⚙ Системи сервера</h1>
+
+  <div class="block">
     <h2>Економіка</h2>
-    <p>Опис фінансової системи сервера.</p>
-</div>
+    <p>Зарплати, податки, ціни, бізнеси (додаси свої правила).</p>
+    <div class="small">Можна зробити підсторінку: economy.html</div>
+  </div>
 
-<div class="section">
+  <div class="block">
     <h2>Рівні та досвід</h2>
-    <p>Як працює система розвитку персонажа.</p>
-</div>
+    <p>Як отримується досвід, що дає рівень, бонуси.</p>
+    <div class="small">Можна зробити підсторінку: levels.html</div>
+  </div>
 
-<br>
-<a href="index.html">⬅ Назад на головну</a>
+  <div class="block">
+    <h2>Покарання та правила</h2>
+    <p>Система попереджень, мутів, банів (як у вас прийнято).</p>
+    <div class="small">Можна зробити підсторінку: punishments.html</div>
+  </div>
+</div>
 
 </body>
 </html>
