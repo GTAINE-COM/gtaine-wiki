@@ -2,58 +2,62 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Системи | GTAINE Wiki</title>
+<link rel="stylesheet" href="assets/style.css">
 
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#0f0f0f;color:#fff;}
-nav{background:#111;padding:15px;text-align:center;}
-nav a{color:#ffd000;margin:0 15px;text-decoration:none;font-weight:bold;}
-nav a:hover{color:#2d6bff;}
-.container{max-width:1100px;margin:0 auto;padding:40px 20px 60px;}
-h1{color:#2d6bff;margin-top:0;}
 .block{
-    background:#1a1a1a;
-    padding:22px;
-    border-radius:12px;
-    margin-top:18px;
-    transition:0.25s;
+  background:#14141c;
+  border-radius:18px;
+  padding:18px 20px;
+  border:1px solid rgba(255,255,255,0.06);
+  margin-top:16px;
+  transition:0.25s;
 }
-.block:hover{background:#222;transform:translateY(-2px);}
-.block h2{margin:0 0 10px 0;}
-.small{opacity:0.85;font-size:14px;margin-top:8px;}
+.block:hover{transform:translateY(-2px); border-color:rgba(45,107,255,0.35);}
+.block h2{margin:0 0 8px 0; color:#2d6bff;}
+.block p{margin:0; color:rgba(255,255,255,.75); line-height:1.55;}
 </style>
 </head>
 
 <body>
 
-<nav>
-  <a href="index.html">Головна</a>
-  <a href="derzh.html">Держ.орг</a>
-  <a href="roboty.html">Роботи</a>
-  <a href="transport.html">Транспорт</a>
-  <a href="systemy.html">Системи</a>
-</nav>
+<div class="nav">
+  <div class="nav__inner">
+    <div class="brand"><span class="b">GTA</span><span class="y">INE</span> Wiki</div>
+    <div class="menu">
+      <a href="index.html">Головна</a>
+      <a href="orgs/index.html">Держ.орг</a>
+      <a href="jobs/index.html">Роботи</a>
+      <a href="transport.html">Транспорт</a>
+      <a class="active" href="systemy.html">Системи</a>
+    </div>
+  </div>
+</div>
 
 <div class="container">
-  <h1>⚙ Системи сервера</h1>
+
+  <div class="hero">
+    <h1>⚙ Системи</h1>
+    <p>Основні механіки сервера (можеш дописувати свої).</p>
+  </div>
 
   <div class="block">
     <h2>Економіка</h2>
-    <p>Зарплати, податки, ціни, бізнеси (додаси свої правила).</p>
-    <div class="small">Можна зробити підсторінку: economy.html</div>
+    <p>Зарплати, податки, ціни, бізнеси.</p>
   </div>
 
   <div class="block">
     <h2>Рівні та досвід</h2>
-    <p>Як отримується досвід, що дає рівень, бонуси.</p>
-    <div class="small">Можна зробити підсторінку: levels.html</div>
+    <p>Як отримується досвід та що дає рівень.</p>
   </div>
 
   <div class="block">
     <h2>Покарання та правила</h2>
-    <p>Система попереджень, мутів, банів (як у вас прийнято).</p>
-    <div class="small">Можна зробити підсторінку: punishments.html</div>
+    <p>Система попереджень, мутів і банів (як у вас прийнято).</p>
   </div>
+
 </div>
 
 </body>
