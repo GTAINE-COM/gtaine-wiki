@@ -1,124 +1,49 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-<meta charset="UTF-8">
-<title>GTAINE Wiki</title>
-
-<style>
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#0f0f0f;
-    color:#fff;
-}
-
-nav{
-    background:#111;
-    padding:15px;
-    text-align:center;
-}
-
-nav a{
-    color:#ffd000;
-    margin:0 15px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-nav a:hover{
-    color:#2d6bff;
-}
-
-header{
-    padding:50px 20px;
-    text-align:center;
-}
-
-h1{
-    font-size:52px;
-    margin:0;
-}
-
-.blue{ color:#2d6bff; }
-.yellow{ color:#ffd000; }
-
-.subtitle{
-    margin-top:10px;
-    opacity:0.9;
-}
-
-.container{
-    max-width:1100px;
-    margin:0 auto;
-    padding:10px 20px 60px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap:20px;
-}
-
-.card{
-    background:#1a1a1a;
-    padding:26px;
-    border-radius:14px;
-    text-decoration:none;
-    color:#fff;
-    display:block;
-    transition:0.25s;
-}
-
-.card:hover{
-    background:#222;
-    transform: translateY(-3px);
-}
-
-.small{
-    opacity:0.85;
-    margin-top:8px;
-    font-size:14px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTAINE Wiki</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
-
 <body>
 
-<nav>
-    <a href="index.html">Головна</a>
-    <a href="derzh.html">Держ.орг</a>
-    <a href="roboty.html">Роботи</a>
-    <a href="transport.html">Транспорт</a>
-    <a href="systemy.html">Системи</a>
-</nav>
-
-<header>
-    <h1><span class="blue">GTA</span><span class="yellow">INE</span> Wiki</h1>
-    <div class="subtitle">Офіційна енциклопедія проєкту</div>
-</header>
+<div class="nav">
+  <div class="nav__inner">
+    <div class="brand"><span class="b">GTA</span><span class="y">INE</span> Wiki</div>
+    <div class="menu">
+      <a class="active" href="index.html">Головна</a>
+      <a href="orgs/index.html">Держ.орг</a>
+      <a href="jobs/index.html">Роботи</a>
+    </div>
+  </div>
+</div>
 
 <div class="container">
-    <div class="grid">
-        <a class="card" href="derzh.html">
-            🏛 Держ.організації
-            <div class="small">Фракції та державні структури</div>
-        </a>
 
-        <a class="card" href="roboty.html">
-            💼 Роботи
-            <div class="small">Професії та заробіток</div>
-        </a>
+  <div class="hero">
+    <h1><span class="b">GTA</span><span class="y">INE</span> Wiki</h1>
+    <p>Офіційна енциклопедія проєкту. Обирай розділ нижче.</p>
+  </div>
 
-        <a class="card" href="transport.html">
-            🚗 Транспорт
-            <div class="small">Авто, класи, правила</div>
-        </a>
+  <div class="grid">
+    <a class="card" href="orgs/index.html">
+      <div class="card__top">
+        <div class="card__icon">🏛️</div>
+        <div class="card__title">Держ.організації</div>
+      </div>
+      <div class="card__sub">СБУ, НПУ, ДСНС, ЗСУ та інші</div>
+    </a>
 
-        <a class="card" href="systemy.html">
-            ⚙ Системи
-            <div class="small">Механіки сервера та фішки</div>
-        </a>
-    </div>
+    <a class="card" href="jobs/index.html">
+      <div class="card__top">
+        <div class="card__icon">💼</div>
+        <div class="card__title">Роботи</div>
+      </div>
+      <div class="card__sub">Шахтар, Таксист, Механік та інші</div>
+    </a>
+  </div>
+
 </div>
 
 </body>
