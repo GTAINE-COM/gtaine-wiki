@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>GTAINE Wiki</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f0f0f;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 40px;
+            background: #111;
+        }
+
+        h1 {
+            font-size: 48px;
+        }
+
+        .blue {
+            color: #2d6bff;
+        }
+
+        .yellow {
+            color: #ffd000;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 50px;
+        }
+
+        .card {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            background: #222;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1><span class="blue">GTA</span><span class="yellow">INE</span> Wiki</h1>
+    <p>Офіційна енциклопедія проєкту</p>
+</header>
+
+<section class="categories">
+    <div class="card">🏛 Держ.організації</div>
+    <div class="card">💼 Роботи</div>
+    <div class="card">🚗 Транспорт</div>
+    <div class="card">⚙ Системи</div>
+</section>
+
+</body>
+</html>
