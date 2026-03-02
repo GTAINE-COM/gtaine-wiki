@@ -31,17 +31,22 @@
 
         .categories {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
             padding: 50px;
+            max-width: 1000px;
+            margin: auto;
         }
 
         .card {
             background: #1a1a1a;
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 12px;
             transition: 0.3s;
             cursor: pointer;
+            text-decoration: none;
+            color: white;
+            display: block;
         }
 
         .card:hover {
@@ -53,15 +58,30 @@
 <body>
 
 <header>
-    <h1><span class="blue">GTA</span><span class="yellow">INE</span> Wiki</h1>
+    <h1>
+        <span class="blue">GTA</span><span class="yellow">INE</span> Wiki
+    </h1>
     <p>Офіційна енциклопедія проєкту</p>
 </header>
 
 <section class="categories">
-    <div class="card">🏛 Держ.організації</div>
-    <div class="card">💼 Роботи</div>
-    <div class="card">🚗 Транспорт</div>
-    <div class="card">⚙ Системи</div>
+
+    <a href="derzh.html" class="card">
+        🏛 Держ.організації
+    </a>
+
+    <a href="roboty.html" class="card">
+        💼 Роботи
+    </a>
+
+    <a href="transport.html" class="card">
+        🚗 Транспорт
+    </a>
+
+    <a href="systemy.html" class="card">
+        ⚙ Системи
+    </a>
+
 </section>
 
 </body>
