@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Правила | GTAINE Wiki</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .page {
+      margin-top: 18px;
+      background: rgba(20,20,28,.92);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 18px;
+    }
+    .page h1 { margin: 0 0 10px; }
+    .toolbar{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin: 12px 0 14px;
+    }
+    .input{
+      flex:1;
+      min-width:240px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: 14px;
+      padding: 10px 12px;
+      color: rgba(255,255,255,.92);
+      outline:none;
+    }
+    .btn{
+      background: rgba(45,107,255,.18);
+      border:1px solid rgba(45,107,255,.35);
+      color:#fff;
+      border-radius:14px;
+      padding: 10px 12px;
+      cursor:pointer;
+      transition:.2s;
+      user-select:none;
+    }
+    .btn:hover{ transform: translateY(-1px); }
+    .rulesText{
+      white-space: pre-wrap;
+      line-height: 1.65;
+      color: rgba(255,255,255,.88);
+      font-size: 15px;
+    }
+    .hint{
+      color: rgba(255,255,255,.70);
+      font-size: 13px;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+    }
+    mark{
+      background: rgba(255,208,0,.22);
+      padding: 0 2px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav">
+    <div class="nav__inner">
+      <div class="brand"><span class="b">GTA</span><span class="y">INE</span> Wiki</div>
+      <div class="menu">
+        <a href="index.html">Головна</a>
+        <a href="orgs/index.html">Держ.орг</a>
+        <a href="jobs/index.html">Роботи</a>
+        <a href="transport.html">Транспорт</a>
+        <a href="systemy.html">Системи</a>
+        <a class="active" href="rules.html">Правила</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero">
+      <h1>📜 Правила GTAINE</h1>
+      <p>Офіційний документ правил сервера. Пошук працює по всьому тексту.</p>
+    </div>
+
+    <div class="page">
+      <div class="toolbar">
+        <input id="q" class="input" placeholder="Пошук по правилам (наприклад: DM, MG, бан, реклама)..." />
+        <button id="clear" class="btn">Очистити</button>
+      </div>
+
+      <div id="content" class="rulesText">Завантаження правил...</div>
+
+      <div class="hint">
+        ⚡ Автозаміна: всюди, де в тексті буде <b>UKRAINE GTA</b>, сайт автоматом покаже <b>GTAINE</b>.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const contentEl = document.getElementById("content");
+    const qEl = document.getElementById("q");
+    const clearBtn = document.getElementById("clear");
+
+    let RAW = "";
+
+    function escapeHtml(s){
+      return s.replace(/[&<>"']/g, m => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+      }[m]));
+    }
+
+    function applyReplace(text){
+      // Автозаміна назв
+      return text
+        .replaceAll("UKRAINE GTA", "GTAINE")
+        .replaceAll("Ukraine GTA", "GTAINE")
+        .replaceAll("ukraine gta", "GTAINE");
+    }
+
+    function render(){
+      const query = qEl.value.trim();
+      const replaced = applyReplace(RAW);
+
+      if(!query){
+        contentEl.innerHTML = escapeHtml(replaced);
+        return;
+      }
+
+      const safe = escapeHtml(replaced);
+      const re = new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi");
+      contentEl.innerHTML = safe.replace(re, (m)=>`<mark>${m}</mark>`);
+    }
+
+    fetch("assets/rules.txt?v=" + Date.now())
+      .then(r => r.text())
+      .then(t => {
+        RAW = t || "";
+        render();
+      })
+      .catch(() => {
+        contentEl.textContent = "❌ Не знайдено assets/rules.txt — створи файл та встав правила.";
+      });
+
+    qEl.addEventListener("input", render);
+    clearBtn.addEventListener("click", () => { qEl.value = ""; render(); });
+  </script>
+
+</body>
+</html>
