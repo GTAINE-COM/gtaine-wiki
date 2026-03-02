@@ -1,88 +1,125 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <title>GTAINE Wiki</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0f0f0f;
-            color: white;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<title>GTAINE Wiki</title>
 
-        header {
-            padding: 40px;
-            background: #111;
-        }
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#0f0f0f;
+    color:#fff;
+}
 
-        h1 {
-            font-size: 48px;
-        }
+nav{
+    background:#111;
+    padding:15px;
+    text-align:center;
+}
 
-        .blue {
-            color: #2d6bff;
-        }
+nav a{
+    color:#ffd000;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+}
 
-        .yellow {
-            color: #ffd000;
-        }
+nav a:hover{
+    color:#2d6bff;
+}
 
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            padding: 50px;
-            max-width: 1000px;
-            margin: auto;
-        }
+header{
+    padding:50px 20px;
+    text-align:center;
+}
 
-        .card {
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 12px;
-            transition: 0.3s;
-            cursor: pointer;
-            text-decoration: none;
-            color: white;
-            display: block;
-        }
+h1{
+    font-size:52px;
+    margin:0;
+}
 
-        .card:hover {
-            background: #222;
-            transform: scale(1.05);
-        }
-    </style>
+.blue{ color:#2d6bff; }
+.yellow{ color:#ffd000; }
+
+.subtitle{
+    margin-top:10px;
+    opacity:0.9;
+}
+
+.container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:10px 20px 60px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap:20px;
+}
+
+.card{
+    background:#1a1a1a;
+    padding:26px;
+    border-radius:14px;
+    text-decoration:none;
+    color:#fff;
+    display:block;
+    transition:0.25s;
+}
+
+.card:hover{
+    background:#222;
+    transform: translateY(-3px);
+}
+
+.small{
+    opacity:0.85;
+    margin-top:8px;
+    font-size:14px;
+}
+</style>
 </head>
+
 <body>
 
+<nav>
+    <a href="index.html">Головна</a>
+    <a href="derzh.html">Держ.орг</a>
+    <a href="roboty.html">Роботи</a>
+    <a href="transport.html">Транспорт</a>
+    <a href="systemy.html">Системи</a>
+</nav>
+
 <header>
-    <h1>
-        <span class="blue">GTA</span><span class="yellow">INE</span> Wiki
-    </h1>
-    <p>Офіційна енциклопедія проєкту</p>
+    <h1><span class="blue">GTA</span><span class="yellow">INE</span> Wiki</h1>
+    <div class="subtitle">Офіційна енциклопедія проєкту</div>
 </header>
 
-<section class="categories">
+<div class="container">
+    <div class="grid">
+        <a class="card" href="derzh.html">
+            🏛 Держ.організації
+            <div class="small">Фракції та державні структури</div>
+        </a>
 
-    <a href="derzh.html" class="card">
-        🏛 Держ.організації
-    </a>
+        <a class="card" href="roboty.html">
+            💼 Роботи
+            <div class="small">Професії та заробіток</div>
+        </a>
 
-    <a href="roboty.html" class="card">
-        💼 Роботи
-    </a>
+        <a class="card" href="transport.html">
+            🚗 Транспорт
+            <div class="small">Авто, класи, правила</div>
+        </a>
 
-    <a href="transport.html" class="card">
-        🚗 Транспорт
-    </a>
-
-    <a href="systemy.html" class="card">
-        ⚙ Системи
-    </a>
-
-</section>
+        <a class="card" href="systemy.html">
+            ⚙ Системи
+            <div class="small">Механіки сервера та фішки</div>
+        </a>
+    </div>
+</div>
 
 </body>
 </html>
